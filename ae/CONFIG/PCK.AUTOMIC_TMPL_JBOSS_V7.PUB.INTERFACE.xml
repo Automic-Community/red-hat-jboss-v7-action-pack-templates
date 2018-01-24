@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ISO-8859-15" standalone="no"?><uc-export clientvers="11.0.0">
-<VARA OVD_VRName="FREI" data_type="XML" name="PCK.AUTOMIC_TMPL_JBOSS_V6.PUB.INTERFACE" replacementmode="2">
+<VARA OVD_VRName="FREI" data_type="XML" name="PCK.AUTOMIC_TMPL_JBOSS_V7.PUB.INTERFACE" replacementmode="2">
 <HEADER state="1">
 <Title/>
 <ArchiveKey1/>
@@ -25,7 +25,7 @@
 <VARA state="1">
 <XML>
 <Parameters>
-<row Name="interface" Value="&lt;interface&gt;&lt;templates&gt;&lt;add-template key=&quot;ARA.INSTALL.JBOSS V6.DEFAULT&quot;&gt;PCK.AUTOMIC_TMPL_JBOSS_V6.PUB.TEMPLATE.INSTALL.JBOSS_V6.DEFAULT&lt;/add-template&gt;&lt;add-template key=&quot;ARA.UNINSTALL.JBOSS V6.DEFAULT&quot;&gt;PCK.AUTOMIC_TMPL_JBOSS_V6.PUB.TEMPLATE.UNINSTALL.JBOSS_V6.DEFAULT&lt;/add-template&gt;&lt;/templates&gt;&lt;/interface&gt;"/>
+<row Name="interface" Value="&lt;interface&gt;&lt;templates&gt;&lt;add-template key=&quot;ARA.INSTALL.JBOSS V6.DEFAULT&quot;&gt;PCK.AUTOMIC_TMPL_JBOSS_V7.PUB.TEMPLATE.INSTALL.JBOSS_V7.DEFAULT&lt;/add-template&gt;&lt;add-template key=&quot;ARA.UNINSTALL.JBOSS V6.DEFAULT&quot;&gt;PCK.AUTOMIC_TMPL_JBOSS_V7.PUB.TEMPLATE.UNINSTALL.JBOSS_V7.DEFAULT&lt;/add-template&gt;&lt;/templates&gt;&lt;/interface&gt;"/>
 </Parameters>
 </XML>
 </VARA>

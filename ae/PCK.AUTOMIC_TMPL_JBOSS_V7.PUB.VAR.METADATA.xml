@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ISO-8859-15" standalone="no"?><uc-export clientvers="11.0.0">
-<VARA OVD_VRName="FREI" data_type="STATIC" name="PCK.AUTOMIC_TMPL_JBOSS_V6.PUB.VAR.METADATA" replacementmode="2">
+<VARA OVD_VRName="FREI" data_type="STATIC" name="PCK.AUTOMIC_TMPL_JBOSS_V7.PUB.VAR.METADATA" replacementmode="2">
 <HEADER state="1">
 <Title/>
 <ArchiveKey1/>
@@ -26,13 +26,13 @@
 <Variables>
 <row Name="Categories" Value="Application Server, Template" Value1="" Value2="" Value3="" Value4=""/>
 <row Name="Company" Value="Automic" Value1="" Value2="" Value3="" Value4=""/>
-<row Name="Dependencies" Value="PCK.AUTOMIC_JBOSS_V6 ~&gt; 1.0, PCK.AUTOMIC_FILESYSTEM ~&gt; 1.1" Value1="" Value2="" Value3="" Value4=""/>
+<row Name="Dependencies" Value="PCK.AUTOMIC_JBOSS_V7 ~&gt; 1.0, PCK.AUTOMIC_FILESYSTEM ~&gt; 1.1" Value1="" Value2="" Value3="" Value4=""/>
 <row Name="Description" Value="" Value1="" Value2="" Value3="" Value4=""/>
 <row Name="Homepage" Value="www.automic.com" Value1="" Value2="" Value3="" Value4=""/>
 <row Name="License" Value="" Value1="" Value2="" Value3="" Value4=""/>
-<row Name="Name" Value="PCK.AUTOMIC_TMPL_JBOSS_V6" Value1="" Value2="" Value3="" Value4=""/>
+<row Name="Name" Value="PCK.AUTOMIC_TMPL_JBOSS_V7" Value1="" Value2="" Value3="" Value4=""/>
 <row Name="Package Format Version" Value="0.2.0" Value1="" Value2="" Value3="" Value4=""/>
-<row Name="Title" Value="Template workflows for JBoss V6 Deployments" Value1="" Value2="" Value3="" Value4=""/>
+<row Name="Title" Value="Template workflows for JBoss V7 Deployments" Value1="" Value2="" Value3="" Value4=""/>
 <row Name="Version" Value="1.0.0" Value1="" Value2="" Value3="" Value4=""/>
 </Variables>
 </VARA>
