@@ -21,11 +21,12 @@
 <uppercase>0</uppercase>
 <sortColumn>0</sortColumn>
 <sortDirection>0</sortDirection>
+<HostType/>
 </ATTR_VARA>
 <VARA state="1">
 <XML>
 <Parameters>
-<row Name="interface" Value="&lt;interface&gt;&lt;templates&gt;&lt;add-template key=&quot;ARA.INSTALL.JBOSS V6.DEFAULT&quot;&gt;PCK.AUTOMIC_TMPL_JBOSS_V7.PUB.TEMPLATE.INSTALL.JBOSS_V7.DEFAULT&lt;/add-template&gt;&lt;add-template key=&quot;ARA.UNINSTALL.JBOSS V6.DEFAULT&quot;&gt;PCK.AUTOMIC_TMPL_JBOSS_V7.PUB.TEMPLATE.UNINSTALL.JBOSS_V7.DEFAULT&lt;/add-template&gt;&lt;/templates&gt;&lt;/interface&gt;"/>
+<row Name="interface" Value="&lt;interface&gt;&lt;templates&gt;&lt;add-template key=&quot;ARA.INSTALL.JBOSS V7.DEFAULT&quot;&gt;PCK.AUTOMIC_TMPL_JBOSS_V7.PUB.TEMPLATE.INSTALL.JBOSS_V7.DEFAULT&lt;/add-template&gt;&lt;add-template key=&quot;ARA.UNINSTALL.JBOSS V7.DEFAULT&quot;&gt;PCK.AUTOMIC_TMPL_JBOSS_V7.PUB.TEMPLATE.UNINSTALL.JBOSS_V7.DEFAULT&lt;/add-template&gt;&lt;/templates&gt;&lt;/interface&gt;"/>
 </Parameters>
 </XML>
 </VARA>

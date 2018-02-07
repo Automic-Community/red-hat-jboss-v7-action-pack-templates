@@ -27,6 +27,7 @@
 <DeactDelay>0</DeactDelay>
 <ActAtRun>1</ActAtRun>
 <UC4Priority>0</UC4Priority>
+<PassPriority>0</PassPriority>
 <MaxParallel2>0</MaxParallel2>
 <ReuseHG>1</ReuseHG>
 <MpElse1>1</MpElse1>
@@ -369,7 +370,7 @@
 <node content="1" id="PCK.AUTOMIC_FILESYSTEM.PRV.PROMPTSET.CREATE_DIR" name="PCK.AUTOMIC_FILESYSTEM.PRV.PROMPTSET.CREATE_DIR" parent="PRPTS" type="PROMPTSET">
 <PROMPTSET name="PCK.AUTOMIC_FILESYSTEM.PRV.PROMPTSET.CREATE_DIR">
 <PRPTBOX promptset="PCK.AUTOMIC_FILESYSTEM.PRV.PROMPTSET.CREATE_DIR">
-<UC4RB_DIR_FILE_CREATE_DIRs.00 ReadFromTable="JPPV" altview="1" haslist="0" msginsert="" msgnr="" promptname="UC4RB_DIR_FILE_CREATE_DIR#" promptsetname="PCK.AUTOMIC_FILESYSTEM.PRV.PROMPTSET.CREATE_DIR">EXT:/jboss/package</UC4RB_DIR_FILE_CREATE_DIRs.00>
+<UC4RB_DIR_FILE_CREATE_DIRs.00 ReadFromTable="JPPV" altview="1" haslist="0" msginsert="" msgnr="" promptname="UC4RB_DIR_FILE_CREATE_DIR#" promptsetname="PCK.AUTOMIC_FILESYSTEM.PRV.PROMPTSET.CREATE_DIR">EXT:/target/target_files_dirs</UC4RB_DIR_FILE_CREATE_DIRs.00>
 </PRPTBOX>
 </PROMPTSET>
 </node>
@@ -433,7 +434,7 @@
 <UC4RB_COPY_EXCLUDEs.00 ReadFromTable="JPPV" altview="0" haslist="0" msginsert="" msgnr="" promptname="UC4RB_COPY_EXCLUDE#" promptsetname="PCK.AUTOMIC_FILESYSTEM.PRV.PROMPTSET.COPY"/>
 <UC4RB_DIR_FILE_CP_OVERWRITEs.00 ReadFromTable="JPPV" altview="0" haslist="0" msginsert="" msgnr="" promptname="UC4RB_DIR_FILE_CP_OVERWRITE#" promptsetname="PCK.AUTOMIC_FILESYSTEM.PRV.PROMPTSET.COPY">YES</UC4RB_DIR_FILE_CP_OVERWRITEs.00>
 <UC4RB_DIR_FILE_CP_SOURCEs.00 ReadFromTable="JPPV" altview="1" haslist="0" msginsert="" msgnr="" promptname="UC4RB_DIR_FILE_CP_SOURCE#" promptsetname="PCK.AUTOMIC_FILESYSTEM.PRV.PROMPTSET.COPY">EXT:/staging/working_files_dirs</UC4RB_DIR_FILE_CP_SOURCEs.00>
-<UC4RB_DIR_FILE_CP_TARGETs.00 ReadFromTable="JPPV" altview="1" haslist="0" msginsert="" msgnr="" promptname="UC4RB_DIR_FILE_CP_TARGET#" promptsetname="PCK.AUTOMIC_FILESYSTEM.PRV.PROMPTSET.COPY">EXT:/jboss/package</UC4RB_DIR_FILE_CP_TARGETs.00>
+<UC4RB_DIR_FILE_CP_TARGETs.00 ReadFromTable="JPPV" altview="1" haslist="0" msginsert="" msgnr="" promptname="UC4RB_DIR_FILE_CP_TARGET#" promptsetname="PCK.AUTOMIC_FILESYSTEM.PRV.PROMPTSET.COPY">EXT:/target/target_files_dirs</UC4RB_DIR_FILE_CP_TARGETs.00>
 </PRPTBOX>
 </PROMPTSET>
 </node>
