@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ISO-8859-15" standalone="no"?><uc-export clientvers="11.0.0">
-<JOBP AllowExternal="1" name="PCK.AUTOMIC_TMPL_JBOSS_V7.PUB.TEMPLATE.INSTALL.JBOSS_V7.DEFAULT">
+<JOBP AllowExternal="1" name="PCK.AUTOMIC_TMPL_JBOSS_V7.PUB.TEMPLATE.INSTALL.JBOSS_V7.V100">
 <XHEADER state="1">
 <Title>Template JBoss v7 Install</Title>
 <ArchiveKey1/>
@@ -62,8 +62,8 @@
 </PostCon>
 </postconditions>
 </task>
-<task Alias="" BranchType="0" Col="2" Lnr="2" OType="JOBP" Object="PCK.AUTOMIC_JBOSS_V7.PUB.ACTION.STOP_APPLICATION" ParentAlias="" ParentObject="" Row="1" Text2="">
-<checkpoint RollbackFlag="0" RunPerPatch="0" RunPerTarget="0" TcpADays="0" TcpATime="00:00" TcpATimeTZ="" TcpExecute="" TcpOn="0" promptatgen="0" showprompt="0"/>
+<task Alias="" BranchType="0" Col="2" Lnr="2" OType="JOBP" Object="PCK.AUTOMIC_FILESYSTEM.PUB.ACTION.CREATE_DIR" ParentAlias="" ParentObject="" Row="1" Text2="">
+<checkpoint RollbackFlag="1" RunPerPatch="0" RunPerTarget="0" TcpADays="0" TcpATime="00:00" TcpATimeTZ="" TcpExecute="" TcpOn="0" promptatgen="0" showprompt="0"/>
 <after ActFlg="1" AtimOn="0" ErlstStDays="0" ErlstStTime="00:00" ErlstStTimeTZ="" HoldFlg="0"/>
 <when ChkWhenExec="0" LtstEnd="0" LtstEndDays="0" LtstEndTime="00:00" LtstSt="0" LtstStDays="0" LtstStTime="00:00" LtstTimeTZ="" WCTypeAND="1" WCTypeOR="0" WElseA="0" WElseH="1" WElseS="0" WElseX="0" WhenExecute="" WtimOn="0"/>
 <preconditions>
@@ -73,6 +73,131 @@
 </preconditions>
 <predecessors>
 <pre BranchType="0" Lnr="1" PreLnr="1" When="ANY_OK" type="container"/>
+</predecessors>
+<runtime MrtCancel="0" MrtDays="0" MrtErt="0" MrtExecute="0" MrtExecuteObj="" MrtFix="0" MrtMethodDate="0" MrtMethodErt="0" MrtMethodFix="0" MrtMethodNone="1" MrtOn="1" MrtTZ="" MrtTime="00:00" SrtErt="0" SrtFix="0" SrtMethodErt="0" SrtMethodFix="0" SrtMethodNone="1"/>
+<result ChkRExec="0" RElseHalt="0" RElseIgn="0" RElseJPAbend="0" RExecFlag="0" RExecute="" RRepMTimes="0" RRepOn="0" RRepWait="0" RWhen=""/>
+<dynvalues>
+<dyntree>
+<node content="1" id="VALUE" name="Variables" parent="" type="TASKVALUE">
+<VALUE state="2">
+<Values/>
+<Mode>0</Mode>
+</VALUE>
+</node>
+<node content="1" id="PVALUE" name="Parent Variables" parent="" type="TASKVALUE">
+<VALUE state="2">
+<Values>
+<row ERTUsage="0" Mod="0" Name="&amp;AGENT#" Value="EXT:agent"/>
+<row ERTUsage="0" Mod="0" Name="&amp;LOGIN#" Value="EXT:@global/login"/>
+<row ERTUsage="0" Mod="0" Name="&amp;OVERWRITE_AGENT#" Value="EXT:/agent_assignment/agent"/>
+<row ERTUsage="0" Mod="0" Name="&amp;OVERWRITE_LOGIN#" Value="EXT:/agent_assignment/login"/>
+<row ERTUsage="0" Mod="0" Name="&amp;TARGET_ID#" Value="EXT:@target/system/id"/>
+</Values>
+<Mode>0</Mode>
+</VALUE>
+</node>
+<node content="1" id="PRPTS" name="PromptSets" parent="" pref="1" type="PROMPTSET"/>
+<node content="0" id="PPRPTS" name="Parent PromptSets" parent="" type="PPROMPTSET"/>
+<node content="1" id="PCK.AUTOMIC_FILESYSTEM.PRV.PROMPTSET.CREATE_DIR" name="PCK.AUTOMIC_FILESYSTEM.PRV.PROMPTSET.CREATE_DIR" parent="PRPTS" type="PROMPTSET">
+<PROMPTSET name="PCK.AUTOMIC_FILESYSTEM.PRV.PROMPTSET.CREATE_DIR">
+<PRPTBOX promptset="PCK.AUTOMIC_FILESYSTEM.PRV.PROMPTSET.CREATE_DIR">
+<UC4RB_DIR_FILE_CREATE_DIRs.00 ReadFromTable="JPPV" altview="1" haslist="0" msginsert="" msgnr="" promptname="UC4RB_DIR_FILE_CREATE_DIR#" promptsetname="PCK.AUTOMIC_FILESYSTEM.PRV.PROMPTSET.CREATE_DIR">EXT:/staging/working_files_dirs</UC4RB_DIR_FILE_CREATE_DIRs.00>
+</PRPTBOX>
+</PROMPTSET>
+</node>
+<node content="1" id="PCK.ITPA_SHARED.PRV.PROMPTSET.OVERWRITE_AGENT" name="PCK.ITPA_SHARED.PRV.PROMPTSET.OVERWRITE_AGENT" parent="PRPTS" type="PROMPTSET">
+<PROMPTSET name="PCK.ITPA_SHARED.PRV.PROMPTSET.OVERWRITE_AGENT">
+<PRPTBOX promptset="PCK.ITPA_SHARED.PRV.PROMPTSET.OVERWRITE_AGENT">
+<AGENTs.00 ReadFromTable="JPPV" altview="1" haslist="0" msginsert="" msgnr="" promptname="AGENT#" promptsetname="PCK.ITPA_SHARED.PRV.PROMPTSET.OVERWRITE_AGENT">&amp;AGENT#</AGENTs.00>
+<LOGINs.00 ReadFromTable="JPPV" altview="1" haslist="0" msginsert="" msgnr="" promptname="LOGIN#" promptsetname="PCK.ITPA_SHARED.PRV.PROMPTSET.OVERWRITE_AGENT">&amp;LOGIN#</LOGINs.00>
+</PRPTBOX>
+</PROMPTSET>
+</node>
+</dyntree>
+</dynvalues>
+<CIT/>
+<calendars CCTypeAll="0" CCTypeExt="0" CCTypeNone="0" CCTypeOne="1" CaleOn="0"/>
+<postconditions>
+<PostCon>
+<conditions id="CONDITIONS"/>
+</PostCon>
+</postconditions>
+</task>
+<task Alias="" BranchType="0" Col="3" Lnr="3" OType="JOBP" Object="PCK.AUTOMIC_FILESYSTEM.PUB.ACTION.COPY" ParentAlias="" ParentObject="" Row="1" Text2="">
+<checkpoint RollbackFlag="1" RunPerPatch="0" RunPerTarget="0" TcpADays="0" TcpATime="00:00" TcpATimeTZ="" TcpExecute="" TcpOn="0" promptatgen="0" showprompt="0"/>
+<after ActFlg="1" AtimOn="0" ErlstStDays="0" ErlstStTime="00:00" ErlstStTimeTZ="" HoldFlg="0"/>
+<when ChkWhenExec="0" LtstEnd="0" LtstEndDays="0" LtstEndTime="00:00" LtstSt="0" LtstStDays="0" LtstStTime="00:00" LtstTimeTZ="" WCTypeAND="1" WCTypeOR="0" WElseA="0" WElseH="1" WElseS="0" WElseX="0" WhenExecute="" WtimOn="0"/>
+<preconditions>
+<PreCon>
+<conditions id="CONDITIONS"/>
+</PreCon>
+</preconditions>
+<predecessors>
+<pre BranchType="0" Lnr="1" PreLnr="2" When="ANY_OK" type="container"/>
+</predecessors>
+<runtime MrtCancel="0" MrtDays="0" MrtErt="0" MrtExecute="0" MrtExecuteObj="" MrtFix="0" MrtMethodDate="0" MrtMethodErt="0" MrtMethodFix="0" MrtMethodNone="1" MrtOn="1" MrtTZ="" MrtTime="00:00" SrtErt="0" SrtFix="0" SrtMethodErt="0" SrtMethodFix="0" SrtMethodNone="1"/>
+<result ChkRExec="0" RElseHalt="0" RElseIgn="0" RElseJPAbend="0" RExecFlag="0" RExecute="" RRepMTimes="0" RRepOn="0" RRepWait="0" RWhen=""/>
+<dynvalues>
+<dyntree>
+<node content="1" id="VALUE" name="Variables" parent="" type="TASKVALUE">
+<VALUE state="2">
+<Values/>
+<Mode>0</Mode>
+</VALUE>
+</node>
+<node content="1" id="PVALUE" name="Parent Variables" parent="" type="TASKVALUE">
+<VALUE state="2">
+<Values>
+<row ERTUsage="0" Mod="0" Name="&amp;AGENT#" Value="EXT:agent"/>
+<row ERTUsage="0" Mod="0" Name="&amp;LOGIN#" Value="EXT:@global/login"/>
+<row ERTUsage="0" Mod="0" Name="&amp;OVERWRITE_AGENT#" Value="EXT:/agent_assignment/agent"/>
+<row ERTUsage="0" Mod="0" Name="&amp;OVERWRITE_LOGIN#" Value="EXT:/agent_assignment/login"/>
+<row ERTUsage="0" Mod="0" Name="&amp;TARGET_ID#" Value="EXT:@target/system/id"/>
+</Values>
+<Mode>0</Mode>
+</VALUE>
+</node>
+<node content="1" id="PRPTS" name="PromptSets" parent="" pref="1" type="PROMPTSET"/>
+<node content="0" id="PPRPTS" name="Parent PromptSets" parent="" type="PPROMPTSET"/>
+<node content="1" id="PCK.AUTOMIC_FILESYSTEM.PRV.PROMPTSET.COPY" name="PCK.AUTOMIC_FILESYSTEM.PRV.PROMPTSET.COPY" parent="PRPTS" type="PROMPTSET">
+<PROMPTSET name="PCK.AUTOMIC_FILESYSTEM.PRV.PROMPTSET.COPY">
+<PRPTBOX promptset="PCK.AUTOMIC_FILESYSTEM.PRV.PROMPTSET.COPY">
+<UC4RB_COPY_EXCLUDEs.00 ReadFromTable="JPPV" altview="0" haslist="0" msginsert="" msgnr="" promptname="UC4RB_COPY_EXCLUDE#" promptsetname="PCK.AUTOMIC_FILESYSTEM.PRV.PROMPTSET.COPY"/>
+<UC4RB_DIR_FILE_CP_OVERWRITEs.00 ReadFromTable="JPPV" altview="0" haslist="0" msginsert="" msgnr="" promptname="UC4RB_DIR_FILE_CP_OVERWRITE#" promptsetname="PCK.AUTOMIC_FILESYSTEM.PRV.PROMPTSET.COPY">YES</UC4RB_DIR_FILE_CP_OVERWRITEs.00>
+<UC4RB_DIR_FILE_CP_SOURCEs.00 ReadFromTable="JPPV" altview="1" haslist="0" msginsert="" msgnr="" promptname="UC4RB_DIR_FILE_CP_SOURCE#" promptsetname="PCK.AUTOMIC_FILESYSTEM.PRV.PROMPTSET.COPY">EXT:/source/source_files_dirs</UC4RB_DIR_FILE_CP_SOURCEs.00>
+<UC4RB_DIR_FILE_CP_TARGETs.00 ReadFromTable="JPPV" altview="1" haslist="0" msginsert="" msgnr="" promptname="UC4RB_DIR_FILE_CP_TARGET#" promptsetname="PCK.AUTOMIC_FILESYSTEM.PRV.PROMPTSET.COPY">EXT:/staging/working_files_dirs</UC4RB_DIR_FILE_CP_TARGETs.00>
+</PRPTBOX>
+</PROMPTSET>
+</node>
+<node content="1" id="PCK.ITPA_SHARED.PRV.PROMPTSET.OVERWRITE_AGENT" name="PCK.ITPA_SHARED.PRV.PROMPTSET.OVERWRITE_AGENT" parent="PRPTS" type="PROMPTSET">
+<PROMPTSET name="PCK.ITPA_SHARED.PRV.PROMPTSET.OVERWRITE_AGENT">
+<PRPTBOX promptset="PCK.ITPA_SHARED.PRV.PROMPTSET.OVERWRITE_AGENT">
+<AGENTs.00 ReadFromTable="JPPV" altview="1" haslist="0" msginsert="" msgnr="" promptname="AGENT#" promptsetname="PCK.ITPA_SHARED.PRV.PROMPTSET.OVERWRITE_AGENT">&amp;AGENT#</AGENTs.00>
+<LOGINs.00 ReadFromTable="JPPV" altview="1" haslist="0" msginsert="" msgnr="" promptname="LOGIN#" promptsetname="PCK.ITPA_SHARED.PRV.PROMPTSET.OVERWRITE_AGENT">&amp;LOGIN#</LOGINs.00>
+</PRPTBOX>
+</PROMPTSET>
+</node>
+</dyntree>
+</dynvalues>
+<CIT/>
+<calendars CCTypeAll="0" CCTypeExt="0" CCTypeNone="0" CCTypeOne="1" CaleOn="0"/>
+<postconditions>
+<PostCon>
+<conditions id="CONDITIONS"/>
+</PostCon>
+</postconditions>
+</task>
+<task Alias="" BranchType="0" Col="2" Lnr="4" OType="JOBP" Object="PCK.AUTOMIC_JBOSS_V7.PUB.ACTION.STOP_APPLICATION" ParentAlias="" ParentObject="" Row="2" Text2="">
+<checkpoint RollbackFlag="1" RunPerPatch="0" RunPerTarget="0" TcpADays="0" TcpATime="00:00" TcpATimeTZ="" TcpExecute="" TcpOn="0" promptatgen="0" showprompt="0"/>
+<after ActFlg="1" AtimOn="0" ErlstStDays="0" ErlstStTime="00:00" ErlstStTimeTZ="" HoldFlg="0"/>
+<when ChkWhenExec="0" LtstEnd="0" LtstEndDays="0" LtstEndTime="00:00" LtstSt="0" LtstStDays="0" LtstStTime="00:00" LtstTimeTZ="" WCTypeAND="1" WCTypeOR="0" WElseA="0" WElseH="1" WElseS="0" WElseX="0" WhenExecute="" WtimOn="0"/>
+<preconditions>
+<PreCon>
+<conditions id="CONDITIONS"/>
+</PreCon>
+</preconditions>
+<predecessors>
+<pre BranchType="0" Lnr="1" PreLnr="3" When="ANY_OK" type="container"/>
 </predecessors>
 <runtime MrtCancel="0" MrtDays="0" MrtErt="0" MrtExecute="0" MrtExecuteObj="" MrtFix="0" MrtMethodDate="0" MrtMethodErt="0" MrtMethodFix="0" MrtMethodNone="1" MrtOn="1" MrtTZ="" MrtTime="00:00" SrtErt="0" SrtFix="0" SrtMethodErt="0" SrtMethodFix="0" SrtMethodNone="1"/>
 <result ChkRExec="0" RElseHalt="0" RElseIgn="0" RElseJPAbend="0" RExecFlag="0" RExecute="" RRepMTimes="0" RRepOn="0" RRepWait="0" RWhen=""/>
@@ -90,7 +215,6 @@
 <VALUE state="2">
 <Values>
 <row ERTUsage="0" Mod="0" Name="&amp;AGENT#" Value="EXT:agent"/>
-<row ERTUsage="0" Mod="0" Name="&amp;ARTIFACT_INSTANCE_ID#" Value="EXT:@artifact/system/id"/>
 <row ERTUsage="0" Mod="0" Name="&amp;LOGIN#" Value="EXT:@global/login"/>
 <row ERTUsage="0" Mod="0" Name="&amp;OVERWRITE_AGENT#" Value="EXT:/agent_assignment/agent"/>
 <row ERTUsage="0" Mod="0" Name="&amp;OVERWRITE_LOGIN#" Value="EXT:/agent_assignment/login"/>
@@ -134,8 +258,8 @@
 </PostCon>
 </postconditions>
 </task>
-<task Alias="" BranchType="0" Col="3" Lnr="3" OType="JOBP" Object="PCK.AUTOMIC_JBOSS_V7.PUB.ACTION.UNDEPLOY_APPLICATION" ParentAlias="" ParentObject="" Row="1" Text2="">
-<checkpoint RollbackFlag="0" RunPerPatch="0" RunPerTarget="0" TcpADays="0" TcpATime="00:00" TcpATimeTZ="" TcpExecute="" TcpOn="0" promptatgen="0" showprompt="0"/>
+<task Alias="" BranchType="0" Col="3" Lnr="5" OType="JOBP" Object="PCK.AUTOMIC_JBOSS_V7.PUB.ACTION.UNDEPLOY_APPLICATION" ParentAlias="" ParentObject="" Row="2" Text2="">
+<checkpoint RollbackFlag="1" RunPerPatch="0" RunPerTarget="0" TcpADays="0" TcpATime="00:00" TcpATimeTZ="" TcpExecute="" TcpOn="0" promptatgen="0" showprompt="0"/>
 <after ActFlg="1" AtimOn="0" ErlstStDays="0" ErlstStTime="00:00" ErlstStTimeTZ="" HoldFlg="0"/>
 <when ChkWhenExec="0" LtstEnd="0" LtstEndDays="0" LtstEndTime="00:00" LtstSt="0" LtstStDays="0" LtstStTime="00:00" LtstTimeTZ="" WCTypeAND="1" WCTypeOR="0" WElseA="0" WElseH="1" WElseS="0" WElseX="0" WhenExecute="" WtimOn="0"/>
 <preconditions>
@@ -144,7 +268,7 @@
 </PreCon>
 </preconditions>
 <predecessors>
-<pre BranchType="0" Lnr="1" PreLnr="2" When="" type="container"/>
+<pre BranchType="0" Lnr="1" PreLnr="4" When="ANY_OK" type="container"/>
 </predecessors>
 <runtime MrtCancel="0" MrtDays="0" MrtErt="0" MrtExecute="0" MrtExecuteObj="" MrtFix="0" MrtMethodDate="0" MrtMethodErt="0" MrtMethodFix="0" MrtMethodNone="1" MrtOn="1" MrtTZ="" MrtTime="00:00" SrtErt="0" SrtFix="0" SrtMethodErt="0" SrtMethodFix="0" SrtMethodNone="1"/>
 <result ChkRExec="0" RElseHalt="0" RElseIgn="0" RElseJPAbend="0" RExecFlag="0" RExecute="" RRepMTimes="0" RRepOn="0" RRepWait="0" RWhen=""/>
@@ -164,7 +288,6 @@
 <VALUE state="2">
 <Values>
 <row ERTUsage="0" Mod="0" Name="&amp;AGENT#" Value="EXT:agent"/>
-<row ERTUsage="0" Mod="0" Name="&amp;ARTIFACT_INSTANCE_ID#" Value="EXT:@artifact/system/id"/>
 <row ERTUsage="0" Mod="0" Name="&amp;LOGIN#" Value="EXT:@global/login"/>
 <row ERTUsage="0" Mod="0" Name="&amp;OVERWRITE_AGENT#" Value="EXT:/agent_assignment/agent"/>
 <row ERTUsage="0" Mod="0" Name="&amp;OVERWRITE_LOGIN#" Value="EXT:/agent_assignment/login"/>
@@ -208,200 +331,13 @@
 </PostCon>
 </postconditions>
 </task>
-<task Alias="" BranchType="0" Col="4" Lnr="4" OType="JOBP" Object="PCK.AUTOMIC_FILESYSTEM.PUB.ACTION.CREATE_DIR" ParentAlias="" ParentObject="" Row="1" Text2="">
-<checkpoint RollbackFlag="0" RunPerPatch="0" RunPerTarget="0" TcpADays="0" TcpATime="00:00" TcpATimeTZ="" TcpExecute="" TcpOn="0" promptatgen="0" showprompt="0"/>
+<task Alias="" BranchType="0" Col="2" Lnr="6" OType="JOBP" Object="PCK.AUTOMIC_FILESYSTEM.PUB.ACTION.CREATE_DIR" ParentAlias="" ParentObject="" Row="3" Text2="">
+<checkpoint RollbackFlag="1" RunPerPatch="0" RunPerTarget="0" TcpADays="0" TcpATime="00:00" TcpATimeTZ="" TcpExecute="" TcpOn="0" promptatgen="0" showprompt="0"/>
 <after ActFlg="1" AtimOn="0" ErlstStDays="0" ErlstStTime="00:00" ErlstStTimeTZ="" HoldFlg="0"/>
 <when ChkWhenExec="0" LtstEnd="0" LtstEndDays="0" LtstEndTime="00:00" LtstSt="0" LtstStDays="0" LtstStTime="00:00" LtstTimeTZ="" WCTypeAND="1" WCTypeOR="0" WElseA="0" WElseH="1" WElseS="0" WElseX="0" WhenExecute="" WtimOn="0"/>
 <preconditions>
 <PreCon>
-<conditions id="CONDITIONS">
-<condition active="1" id="USER DEFINED" once="0" type="C" uiinfo="">
-<params>
-<param altview="0" name="XC_P01" type="V" value="&amp;ARTIFACT_INSTANCE_ID#"/>
-<param altview="0" name="XC_P02" type="V" value="&lt;&gt;"/>
-<param altview="0" name="XC_P03" type="V" value="0"/>
-</params>
-<when active="1" id="USER DEFINED" once="0" type="W" uiinfo="">
-<action active="1" id="SKIP TASK" once="1" type="A" uiinfo="">
-<params>
-<param altview="0" name="XC_P01" type="V" value="Artifact Instance set"/>
-</params>
-</action>
-</when>
-<else active="1" id="USER DEFINED" once="0" type="E" uiinfo="">
-<action active="1" id="RUN TASK" once="1" type="A" uiinfo="">
-<params/>
-</action>
-</else>
-</condition>
-</conditions>
-</PreCon>
-</preconditions>
-<predecessors>
-<pre BranchType="0" Lnr="1" PreLnr="3" When="" type="container"/>
-</predecessors>
-<runtime MrtCancel="0" MrtDays="0" MrtErt="0" MrtExecute="0" MrtExecuteObj="" MrtFix="0" MrtMethodDate="0" MrtMethodErt="0" MrtMethodFix="0" MrtMethodNone="1" MrtOn="1" MrtTZ="" MrtTime="00:00" SrtErt="0" SrtFix="0" SrtMethodErt="0" SrtMethodFix="0" SrtMethodNone="1"/>
-<result ChkRExec="0" RElseHalt="0" RElseIgn="0" RElseJPAbend="0" RExecFlag="0" RExecute="" RRepMTimes="0" RRepOn="0" RRepWait="0" RWhen=""/>
-<dynvalues>
-<dyntree>
-<node content="1" id="VALUE" name="Variables" parent="" type="TASKVALUE">
-<VALUE state="2">
-<Values/>
-<Mode>0</Mode>
-</VALUE>
-</node>
-<node content="1" id="PVALUE" name="Parent Variables" parent="" type="TASKVALUE">
-<VALUE state="2">
-<Values>
-<row ERTUsage="0" Mod="0" Name="&amp;AGENT#" Value="EXT:agent"/>
-<row ERTUsage="0" Mod="0" Name="&amp;ARTIFACT_INSTANCE_ID#" Value="EXT:@artifact/system/id"/>
-<row ERTUsage="0" Mod="0" Name="&amp;LOGIN#" Value="EXT:@global/login"/>
-<row ERTUsage="0" Mod="0" Name="&amp;OVERWRITE_AGENT#" Value="EXT:/agent_assignment/agent"/>
-<row ERTUsage="0" Mod="0" Name="&amp;OVERWRITE_LOGIN#" Value="EXT:/agent_assignment/login"/>
-<row ERTUsage="0" Mod="0" Name="&amp;TARGET_ID#" Value="EXT:@target/system/id"/>
-</Values>
-<Mode>0</Mode>
-</VALUE>
-</node>
-<node content="1" id="PRPTS" name="PromptSets" parent="" pref="1" type="PROMPTSET"/>
-<node content="0" id="PPRPTS" name="Parent PromptSets" parent="" type="PPROMPTSET"/>
-<node content="1" id="PCK.AUTOMIC_FILESYSTEM.PRV.PROMPTSET.CREATE_DIR" name="PCK.AUTOMIC_FILESYSTEM.PRV.PROMPTSET.CREATE_DIR" parent="PRPTS" type="PROMPTSET">
-<PROMPTSET name="PCK.AUTOMIC_FILESYSTEM.PRV.PROMPTSET.CREATE_DIR">
-<PRPTBOX promptset="PCK.AUTOMIC_FILESYSTEM.PRV.PROMPTSET.CREATE_DIR">
-<UC4RB_DIR_FILE_CREATE_DIRs.00 ReadFromTable="JPPV" altview="1" haslist="0" msginsert="" msgnr="" promptname="UC4RB_DIR_FILE_CREATE_DIR#" promptsetname="PCK.AUTOMIC_FILESYSTEM.PRV.PROMPTSET.CREATE_DIR">EXT:/staging/working_files_dirs</UC4RB_DIR_FILE_CREATE_DIRs.00>
-</PRPTBOX>
-</PROMPTSET>
-</node>
-<node content="1" id="PCK.ITPA_SHARED.PRV.PROMPTSET.OVERWRITE_AGENT" name="PCK.ITPA_SHARED.PRV.PROMPTSET.OVERWRITE_AGENT" parent="PRPTS" type="PROMPTSET">
-<PROMPTSET name="PCK.ITPA_SHARED.PRV.PROMPTSET.OVERWRITE_AGENT">
-<PRPTBOX promptset="PCK.ITPA_SHARED.PRV.PROMPTSET.OVERWRITE_AGENT">
-<AGENTs.00 ReadFromTable="JPPV" altview="1" haslist="0" msginsert="" msgnr="" promptname="AGENT#" promptsetname="PCK.ITPA_SHARED.PRV.PROMPTSET.OVERWRITE_AGENT">&amp;AGENT#</AGENTs.00>
-<LOGINs.00 ReadFromTable="JPPV" altview="1" haslist="0" msginsert="" msgnr="" promptname="LOGIN#" promptsetname="PCK.ITPA_SHARED.PRV.PROMPTSET.OVERWRITE_AGENT">&amp;LOGIN#</LOGINs.00>
-</PRPTBOX>
-</PROMPTSET>
-</node>
-</dyntree>
-</dynvalues>
-<CIT/>
-<calendars CCTypeAll="0" CCTypeExt="0" CCTypeNone="0" CCTypeOne="1" CaleOn="0"/>
-<postconditions>
-<PostCon>
 <conditions id="CONDITIONS"/>
-</PostCon>
-</postconditions>
-</task>
-<task Alias="" BranchType="0" Col="5" Lnr="5" OType="JOBP" Object="PCK.AUTOMIC_FILESYSTEM.PUB.ACTION.COPY" ParentAlias="" ParentObject="" Row="1" Text2="">
-<checkpoint RollbackFlag="0" RunPerPatch="0" RunPerTarget="0" TcpADays="0" TcpATime="00:00" TcpATimeTZ="" TcpExecute="" TcpOn="0" promptatgen="0" showprompt="0"/>
-<after ActFlg="1" AtimOn="0" ErlstStDays="0" ErlstStTime="00:00" ErlstStTimeTZ="" HoldFlg="0"/>
-<when ChkWhenExec="0" LtstEnd="0" LtstEndDays="0" LtstEndTime="00:00" LtstSt="0" LtstStDays="0" LtstStTime="00:00" LtstTimeTZ="" WCTypeAND="1" WCTypeOR="0" WElseA="0" WElseH="1" WElseS="0" WElseX="0" WhenExecute="" WtimOn="0"/>
-<preconditions>
-<PreCon>
-<conditions id="CONDITIONS">
-<condition active="1" id="USER DEFINED" once="0" type="C" uiinfo="">
-<params>
-<param altview="0" name="XC_P01" type="V" value="&amp;ARTIFACT_INSTANCE_ID#"/>
-<param altview="0" name="XC_P02" type="V" value="&lt;&gt;"/>
-<param altview="0" name="XC_P03" type="V" value="0"/>
-</params>
-<when active="1" id="USER DEFINED" once="0" type="W" uiinfo="">
-<action active="1" id="SKIP TASK" once="1" type="A" uiinfo="">
-<params>
-<param altview="0" name="XC_P01" type="V" value="Artifact Instance set"/>
-</params>
-</action>
-</when>
-<else active="1" id="USER DEFINED" once="0" type="E" uiinfo="">
-<action active="1" id="RUN TASK" once="1" type="A" uiinfo="">
-<params/>
-</action>
-</else>
-</condition>
-</conditions>
-</PreCon>
-</preconditions>
-<predecessors>
-<pre BranchType="0" Lnr="1" PreLnr="4" When="ANY_OK" type="container"/>
-</predecessors>
-<runtime MrtCancel="0" MrtDays="0" MrtErt="0" MrtExecute="0" MrtExecuteObj="" MrtFix="0" MrtMethodDate="0" MrtMethodErt="0" MrtMethodFix="0" MrtMethodNone="1" MrtOn="1" MrtTZ="" MrtTime="00:00" SrtErt="0" SrtFix="0" SrtMethodErt="0" SrtMethodFix="0" SrtMethodNone="1"/>
-<result ChkRExec="0" RElseHalt="0" RElseIgn="0" RElseJPAbend="0" RExecFlag="0" RExecute="" RRepMTimes="0" RRepOn="0" RRepWait="0" RWhen=""/>
-<dynvalues>
-<dyntree>
-<node content="1" id="VALUE" name="Variables" parent="" type="TASKVALUE">
-<VALUE state="2">
-<Values/>
-<Mode>0</Mode>
-</VALUE>
-</node>
-<node content="1" id="PVALUE" name="Parent Variables" parent="" type="TASKVALUE">
-<VALUE state="2">
-<Values>
-<row ERTUsage="0" Mod="0" Name="&amp;AGENT#" Value="EXT:agent"/>
-<row ERTUsage="0" Mod="0" Name="&amp;ARTIFACT_INSTANCE_ID#" Value="EXT:@artifact/system/id"/>
-<row ERTUsage="0" Mod="0" Name="&amp;LOGIN#" Value="EXT:@global/login"/>
-<row ERTUsage="0" Mod="0" Name="&amp;OVERWRITE_AGENT#" Value="EXT:/agent_assignment/agent"/>
-<row ERTUsage="0" Mod="0" Name="&amp;OVERWRITE_LOGIN#" Value="EXT:/agent_assignment/login"/>
-<row ERTUsage="0" Mod="0" Name="&amp;TARGET_ID#" Value="EXT:@target/system/id"/>
-</Values>
-<Mode>0</Mode>
-</VALUE>
-</node>
-<node content="1" id="PRPTS" name="PromptSets" parent="" pref="1" type="PROMPTSET"/>
-<node content="0" id="PPRPTS" name="Parent PromptSets" parent="" type="PPROMPTSET"/>
-<node content="1" id="PCK.AUTOMIC_FILESYSTEM.PRV.PROMPTSET.COPY" name="PCK.AUTOMIC_FILESYSTEM.PRV.PROMPTSET.COPY" parent="PRPTS" type="PROMPTSET">
-<PROMPTSET name="PCK.AUTOMIC_FILESYSTEM.PRV.PROMPTSET.COPY">
-<PRPTBOX promptset="PCK.AUTOMIC_FILESYSTEM.PRV.PROMPTSET.COPY">
-<UC4RB_COPY_EXCLUDEs.00 ReadFromTable="JPPV" altview="0" haslist="0" msginsert="" msgnr="" promptname="UC4RB_COPY_EXCLUDE#" promptsetname="PCK.AUTOMIC_FILESYSTEM.PRV.PROMPTSET.COPY"/>
-<UC4RB_DIR_FILE_CP_OVERWRITEs.00 ReadFromTable="JPPV" altview="0" haslist="0" msginsert="" msgnr="" promptname="UC4RB_DIR_FILE_CP_OVERWRITE#" promptsetname="PCK.AUTOMIC_FILESYSTEM.PRV.PROMPTSET.COPY">YES</UC4RB_DIR_FILE_CP_OVERWRITEs.00>
-<UC4RB_DIR_FILE_CP_SOURCEs.00 ReadFromTable="JPPV" altview="1" haslist="0" msginsert="" msgnr="" promptname="UC4RB_DIR_FILE_CP_SOURCE#" promptsetname="PCK.AUTOMIC_FILESYSTEM.PRV.PROMPTSET.COPY">EXT:/source/source_files_dirs</UC4RB_DIR_FILE_CP_SOURCEs.00>
-<UC4RB_DIR_FILE_CP_TARGETs.00 ReadFromTable="JPPV" altview="1" haslist="0" msginsert="" msgnr="" promptname="UC4RB_DIR_FILE_CP_TARGET#" promptsetname="PCK.AUTOMIC_FILESYSTEM.PRV.PROMPTSET.COPY">EXT:/staging/working_files_dirs</UC4RB_DIR_FILE_CP_TARGETs.00>
-</PRPTBOX>
-</PROMPTSET>
-</node>
-<node content="1" id="PCK.ITPA_SHARED.PRV.PROMPTSET.OVERWRITE_AGENT" name="PCK.ITPA_SHARED.PRV.PROMPTSET.OVERWRITE_AGENT" parent="PRPTS" type="PROMPTSET">
-<PROMPTSET name="PCK.ITPA_SHARED.PRV.PROMPTSET.OVERWRITE_AGENT">
-<PRPTBOX promptset="PCK.ITPA_SHARED.PRV.PROMPTSET.OVERWRITE_AGENT">
-<AGENTs.00 ReadFromTable="JPPV" altview="1" haslist="0" msginsert="" msgnr="" promptname="AGENT#" promptsetname="PCK.ITPA_SHARED.PRV.PROMPTSET.OVERWRITE_AGENT">&amp;AGENT#</AGENTs.00>
-<LOGINs.00 ReadFromTable="JPPV" altview="1" haslist="0" msginsert="" msgnr="" promptname="LOGIN#" promptsetname="PCK.ITPA_SHARED.PRV.PROMPTSET.OVERWRITE_AGENT">&amp;LOGIN#</LOGINs.00>
-</PRPTBOX>
-</PROMPTSET>
-</node>
-</dyntree>
-</dynvalues>
-<CIT/>
-<calendars CCTypeAll="0" CCTypeExt="0" CCTypeNone="0" CCTypeOne="1" CaleOn="0"/>
-<postconditions>
-<PostCon>
-<conditions id="CONDITIONS"/>
-</PostCon>
-</postconditions>
-</task>
-<task Alias="" BranchType="0" Col="6" Lnr="6" OType="JOBP" Object="PCK.AUTOMIC_FILESYSTEM.PUB.ACTION.CREATE_DIR" ParentAlias="" ParentObject="" Row="1" Text2="">
-<checkpoint RollbackFlag="0" RunPerPatch="0" RunPerTarget="0" TcpADays="0" TcpATime="00:00" TcpATimeTZ="" TcpExecute="" TcpOn="0" promptatgen="0" showprompt="0"/>
-<after ActFlg="1" AtimOn="0" ErlstStDays="0" ErlstStTime="00:00" ErlstStTimeTZ="" HoldFlg="0"/>
-<when ChkWhenExec="0" LtstEnd="0" LtstEndDays="0" LtstEndTime="00:00" LtstSt="0" LtstStDays="0" LtstStTime="00:00" LtstTimeTZ="" WCTypeAND="1" WCTypeOR="0" WElseA="0" WElseH="1" WElseS="0" WElseX="0" WhenExecute="" WtimOn="0"/>
-<preconditions>
-<PreCon>
-<conditions id="CONDITIONS">
-<condition active="1" id="USER DEFINED" once="0" type="C" uiinfo="">
-<params>
-<param altview="0" name="XC_P01" type="V" value="&amp;ARTIFACT_INSTANCE_ID#"/>
-<param altview="0" name="XC_P02" type="V" value="&lt;&gt;"/>
-<param altview="0" name="XC_P03" type="V" value="0"/>
-</params>
-<when active="1" id="USER DEFINED" once="0" type="W" uiinfo="">
-<action active="1" id="SKIP TASK" once="1" type="A" uiinfo="">
-<params>
-<param altview="0" name="XC_P01" type="V" value="Artifact Instance set"/>
-</params>
-</action>
-</when>
-<else active="1" id="USER DEFINED" once="0" type="E" uiinfo="">
-<action active="1" id="RUN TASK" once="1" type="A" uiinfo="">
-<params/>
-</action>
-</else>
-</condition>
-</conditions>
 </PreCon>
 </preconditions>
 <predecessors>
@@ -421,7 +357,6 @@
 <VALUE state="2">
 <Values>
 <row ERTUsage="0" Mod="0" Name="&amp;AGENT#" Value="EXT:agent"/>
-<row ERTUsage="0" Mod="0" Name="&amp;ARTIFACT_INSTANCE_ID#" Value="EXT:@artifact/system/id"/>
 <row ERTUsage="0" Mod="0" Name="&amp;LOGIN#" Value="EXT:@global/login"/>
 <row ERTUsage="0" Mod="0" Name="&amp;OVERWRITE_AGENT#" Value="EXT:/agent_assignment/agent"/>
 <row ERTUsage="0" Mod="0" Name="&amp;OVERWRITE_LOGIN#" Value="EXT:/agent_assignment/login"/>
@@ -457,33 +392,13 @@
 </PostCon>
 </postconditions>
 </task>
-<task Alias="" BranchType="0" Col="7" Lnr="7" OType="JOBP" Object="PCK.AUTOMIC_FILESYSTEM.PUB.ACTION.COPY" ParentAlias="" ParentObject="" Row="1" Text2="">
-<checkpoint RollbackFlag="0" RunPerPatch="0" RunPerTarget="0" TcpADays="0" TcpATime="00:00" TcpATimeTZ="" TcpExecute="" TcpOn="0" promptatgen="0" showprompt="0"/>
+<task Alias="" BranchType="0" Col="3" Lnr="7" OType="JOBP" Object="PCK.AUTOMIC_FILESYSTEM.PUB.ACTION.COPY" ParentAlias="" ParentObject="" Row="3" Text2="">
+<checkpoint RollbackFlag="1" RunPerPatch="0" RunPerTarget="0" TcpADays="0" TcpATime="00:00" TcpATimeTZ="" TcpExecute="" TcpOn="0" promptatgen="0" showprompt="0"/>
 <after ActFlg="1" AtimOn="0" ErlstStDays="0" ErlstStTime="00:00" ErlstStTimeTZ="" HoldFlg="0"/>
 <when ChkWhenExec="0" LtstEnd="0" LtstEndDays="0" LtstEndTime="00:00" LtstSt="0" LtstStDays="0" LtstStTime="00:00" LtstTimeTZ="" WCTypeAND="1" WCTypeOR="0" WElseA="0" WElseH="1" WElseS="0" WElseX="0" WhenExecute="" WtimOn="0"/>
 <preconditions>
 <PreCon>
-<conditions id="CONDITIONS">
-<condition active="1" id="USER DEFINED" once="0" type="C" uiinfo="">
-<params>
-<param altview="0" name="XC_P01" type="V" value="&amp;ARTIFACT_INSTANCE_ID#"/>
-<param altview="0" name="XC_P02" type="V" value="&lt;&gt;"/>
-<param altview="0" name="XC_P03" type="V" value="0"/>
-</params>
-<when active="1" id="USER DEFINED" once="0" type="W" uiinfo="">
-<action active="1" id="SKIP TASK" once="1" type="A" uiinfo="">
-<params>
-<param altview="0" name="XC_P01" type="V" value="Artifact Instance set"/>
-</params>
-</action>
-</when>
-<else active="1" id="USER DEFINED" once="0" type="E" uiinfo="">
-<action active="1" id="RUN TASK" once="1" type="A" uiinfo="">
-<params/>
-</action>
-</else>
-</condition>
-</conditions>
+<conditions id="CONDITIONS"/>
 </PreCon>
 </preconditions>
 <predecessors>
@@ -503,7 +418,6 @@
 <VALUE state="2">
 <Values>
 <row ERTUsage="0" Mod="0" Name="&amp;AGENT#" Value="EXT:agent"/>
-<row ERTUsage="0" Mod="0" Name="&amp;ARTIFACT_INSTANCE_ID#" Value="EXT:@artifact/system/id"/>
 <row ERTUsage="0" Mod="0" Name="&amp;LOGIN#" Value="EXT:@global/login"/>
 <row ERTUsage="0" Mod="0" Name="&amp;OVERWRITE_AGENT#" Value="EXT:/agent_assignment/agent"/>
 <row ERTUsage="0" Mod="0" Name="&amp;OVERWRITE_LOGIN#" Value="EXT:/agent_assignment/login"/>
@@ -542,124 +456,8 @@
 </PostCon>
 </postconditions>
 </task>
-<task Alias="" BranchType="0" Col="4" Lnr="8" OType="JOBP" Object="PCK.AUTOMIC_BOND.PUB.ACTION.GET_ARTIFACT" ParentAlias="" ParentObject="" Row="2" Text2="">
-<checkpoint RollbackFlag="0" RunPerPatch="0" RunPerTarget="0" TcpADays="0" TcpATime="00:00" TcpATimeTZ="" TcpExecute="" TcpOn="0" promptatgen="0" showprompt="0"/>
-<after ActFlg="1" AtimOn="0" ErlstStDays="0" ErlstStTime="00:00" ErlstStTimeTZ="" HoldFlg="0"/>
-<when ChkWhenExec="0" LtstEnd="0" LtstEndDays="0" LtstEndTime="00:00" LtstSt="0" LtstStDays="0" LtstStTime="00:00" LtstTimeTZ="" WCTypeAND="1" WCTypeOR="0" WElseA="0" WElseH="1" WElseS="0" WElseX="0" WhenExecute="" WtimOn="0"/>
-<preconditions>
-<PreCon>
-<conditions id="CONDITIONS">
-<condition active="1" id="USER DEFINED" once="0" type="C" uiinfo="">
-<params>
-<param altview="0" name="XC_P01" type="V" value="&amp;ARTIFACT_INSTANCE_ID#"/>
-<param altview="0" name="XC_P02" type="V" value="&lt;&gt;"/>
-<param altview="0" name="XC_P03" type="V" value="0"/>
-</params>
-<when active="1" id="USER DEFINED" once="0" type="W" uiinfo="">
-<action active="1" id="RUN TASK" once="1" type="A" uiinfo="">
-<params/>
-</action>
-</when>
-<else active="1" id="USER DEFINED" once="0" type="E" uiinfo="">
-<action active="1" id="SKIP TASK" once="1" type="A" uiinfo="">
-<params>
-<param altview="0" name="XC_P01" type="V" value="No Artifact Instance set"/>
-</params>
-</action>
-</else>
-</condition>
-</conditions>
-</PreCon>
-</preconditions>
-<predecessors>
-<pre BranchType="0" Lnr="1" PreLnr="3" When="" type="container"/>
-</predecessors>
-<runtime MrtCancel="0" MrtDays="0" MrtErt="0" MrtExecute="0" MrtExecuteObj="" MrtFix="0" MrtMethodDate="0" MrtMethodErt="0" MrtMethodFix="0" MrtMethodNone="1" MrtOn="1" MrtTZ="" MrtTime="00:00" SrtErt="0" SrtFix="0" SrtMethodErt="0" SrtMethodFix="0" SrtMethodNone="1"/>
-<result ChkRExec="0" RElseHalt="0" RElseIgn="0" RElseJPAbend="0" RExecFlag="0" RExecute="" RRepMTimes="0" RRepOn="0" RRepWait="0" RWhen=""/>
-<dynvalues>
-<dyntree>
-<node content="1" id="VALUE" name="Variables" parent="" type="TASKVALUE">
-<VALUE state="2">
-<Values>
-<row ERTUsage="0" Mod="0" Name="&amp;UC4RB_ARTIFACT_DIR#" Value=""/>
-<row ERTUsage="0" Mod="0" Name="&amp;UC4RB_ARTIFACT_EXTRACTED_DIR#" Value="artifact_extracted_content"/>
-<row ERTUsage="0" Mod="0" Name="&amp;UC4RB_ARTIFACT_ID#" Value="EXT:@artifact/system/id"/>
-<row ERTUsage="0" Mod="0" Name="&amp;UC4RB_ARTIFACT_READY#" Value="NO"/>
-<row ERTUsage="0" Mod="0" Name="&amp;UC4RB_ARTIFACT_VARA_NAME#" Value=""/>
-<row ERTUsage="0" Mod="0" Name="&amp;UC4RB_COPY_SUCCESS#" Value="NO"/>
-<row ERTUsage="0" Mod="0" Name="&amp;UC4RB_DOWNLOAD_SUCCESS#" Value="NO"/>
-<row ERTUsage="0" Mod="0" Name="&amp;UC4RB_RUN_ID#" Value=""/>
-<row ERTUsage="0" Mod="0" Name="&amp;UC4RB_USE_ARTIFACT#" Value="NO"/>
-<row ERTUsage="0" Mod="0" Name="&amp;UC4RB_USE_STAGING#" Value="NO"/>
-</Values>
-<Mode>0</Mode>
-</VALUE>
-</node>
-<node content="1" id="PVALUE" name="Parent Variables" parent="" type="TASKVALUE">
-<VALUE state="2">
-<Values>
-<row ERTUsage="0" Mod="0" Name="&amp;AGENT#" Value="EXT:agent"/>
-<row ERTUsage="0" Mod="0" Name="&amp;ARTIFACT_INSTANCE_ID#" Value="EXT:@artifact/system/id"/>
-<row ERTUsage="0" Mod="0" Name="&amp;LOGIN#" Value="EXT:@global/login"/>
-<row ERTUsage="0" Mod="0" Name="&amp;OVERWRITE_AGENT#" Value="EXT:/agent_assignment/agent"/>
-<row ERTUsage="0" Mod="0" Name="&amp;OVERWRITE_LOGIN#" Value="EXT:/agent_assignment/login"/>
-<row ERTUsage="0" Mod="0" Name="&amp;TARGET_ID#" Value="EXT:@target/system/id"/>
-</Values>
-<Mode>0</Mode>
-</VALUE>
-</node>
-<node content="1" id="PRPTS" name="PromptSets" parent="" pref="1" type="PROMPTSET"/>
-<node content="0" id="PPRPTS" name="Parent PromptSets" parent="" type="PPROMPTSET"/>
-<node content="1" id="PCK.AUTOMIC_BOND.PRV.PROMPTSET.GET_ARTIFACT.FILTER" name="PCK.AUTOMIC_BOND.PRV.PROMPTSET.GET_ARTIFACT.FILTER" parent="PRPTS" type="PROMPTSET">
-<PROMPTSET name="PCK.AUTOMIC_BOND.PRV.PROMPTSET.GET_ARTIFACT.FILTER">
-<PRPTBOX promptset="PCK.AUTOMIC_BOND.PRV.PROMPTSET.GET_ARTIFACT.FILTER">
-<UC4RB_COPY_CASE_SENSITIVEs.00 ReadFromTable="JPPV" altview="0" haslist="0" msginsert="" msgnr="" promptname="UC4RB_COPY_CASE_SENSITIVE#" promptsetname="PCK.AUTOMIC_BOND.PRV.PROMPTSET.GET_ARTIFACT.FILTER">NO</UC4RB_COPY_CASE_SENSITIVEs.00>
-<UC4RB_COPY_CLEAN_TARGETs.00 ReadFromTable="JPPV" altview="0" haslist="0" msginsert="" msgnr="" promptname="UC4RB_COPY_CLEAN_TARGET#" promptsetname="PCK.AUTOMIC_BOND.PRV.PROMPTSET.GET_ARTIFACT.FILTER">YES</UC4RB_COPY_CLEAN_TARGETs.00>
-<UC4RB_COPY_DUPLICATE_STRATEGYs.00 ReadFromTable="JPPV" altview="0" haslist="0" msginsert="" msgnr="" promptname="UC4RB_COPY_DUPLICATE_STRATEGY#" promptsetname="PCK.AUTOMIC_BOND.PRV.PROMPTSET.GET_ARTIFACT.FILTER">SKIP</UC4RB_COPY_DUPLICATE_STRATEGYs.00>
-<UC4RB_COPY_EXCLUDESs.00 ReadFromTable="JPPV" altview="0" haslist="0" msginsert="" msgnr="" promptname="UC4RB_COPY_EXCLUDES#" promptsetname="PCK.AUTOMIC_BOND.PRV.PROMPTSET.GET_ARTIFACT.FILTER"/>
-<UC4RB_COPY_INCLUDESs.00 ReadFromTable="JPPV" altview="0" haslist="0" msginsert="" msgnr="" promptname="UC4RB_COPY_INCLUDES#" promptsetname="PCK.AUTOMIC_BOND.PRV.PROMPTSET.GET_ARTIFACT.FILTER"/>
-<UC4RB_COPY_RENAME_PATTERNs.00 ReadFromTable="JPPV" altview="0" haslist="0" msginsert="" msgnr="" promptname="UC4RB_COPY_RENAME_PATTERN#" promptsetname="PCK.AUTOMIC_BOND.PRV.PROMPTSET.GET_ARTIFACT.FILTER"/>
-<UC4RB_COPY_RENAME_REPLACEMENTs.00 ReadFromTable="JPPV" altview="0" haslist="0" msginsert="" msgnr="" promptname="UC4RB_COPY_RENAME_REPLACEMENT#" promptsetname="PCK.AUTOMIC_BOND.PRV.PROMPTSET.GET_ARTIFACT.FILTER"/>
-</PRPTBOX>
-</PROMPTSET>
-</node>
-<node content="1" id="PCK.AUTOMIC_BOND.PRV.PROMPTSET.GET_ARTIFACT.DOWNLOAD_ARTIFACT" name="PCK.AUTOMIC_BOND.PRV.PROMPTSET.GET_ARTIFACT.DOWNLOAD_ARTIFACT" parent="PRPTS" type="PROMPTSET">
-<PROMPTSET name="PCK.AUTOMIC_BOND.PRV.PROMPTSET.GET_ARTIFACT.DOWNLOAD_ARTIFACT">
-<PRPTBOX promptset="PCK.AUTOMIC_BOND.PRV.PROMPTSET.GET_ARTIFACT.DOWNLOAD_ARTIFACT">
-<UC4RB_ARCHIVE_TYPEs.00 ReadFromTable="JPPV" altview="1" haslist="0" msginsert="" msgnr="" promptname="UC4RB_ARCHIVE_TYPE#" promptsetname="PCK.AUTOMIC_BOND.PRV.PROMPTSET.GET_ARTIFACT.DOWNLOAD_ARTIFACT">EXT:@artifact/custom/archive_type</UC4RB_ARCHIVE_TYPEs.00>
-<UC4RB_ARTIFACT_BASE_DIRs.00 ReadFromTable="JPPV" altview="1" haslist="0" msginsert="" msgnr="" promptname="UC4RB_ARTIFACT_BASE_DIR#" promptsetname="PCK.AUTOMIC_BOND.PRV.PROMPTSET.GET_ARTIFACT.DOWNLOAD_ARTIFACT">EXT:@target/custom/staging_base_directory</UC4RB_ARTIFACT_BASE_DIRs.00>
-<UC4RB_CHECKSUM_OPTIONs.00 ReadFromTable="JPPV" altview="0" haslist="0" msginsert="" msgnr="" promptname="UC4RB_CHECKSUM_OPTION#" promptsetname="PCK.AUTOMIC_BOND.PRV.PROMPTSET.GET_ARTIFACT.DOWNLOAD_ARTIFACT">SKIP_IF_NOT_EXIST</UC4RB_CHECKSUM_OPTIONs.00>
-<UC4RB_COPY_TARGET_DIRs.00 ReadFromTable="JPPV" altview="1" haslist="0" msginsert="" msgnr="" promptname="UC4RB_COPY_TARGET_DIR#" promptsetname="PCK.AUTOMIC_BOND.PRV.PROMPTSET.GET_ARTIFACT.DOWNLOAD_ARTIFACT">EXT:/jboss/package</UC4RB_COPY_TARGET_DIRs.00>
-<UC4RB_DOWNLOAD_TIMEOUTs.00 ReadFromTable="JPPV" altview="0" haslist="0" msginsert="" msgnr="" promptname="UC4RB_DOWNLOAD_TIMEOUT#" promptsetname="PCK.AUTOMIC_BOND.PRV.PROMPTSET.GET_ARTIFACT.DOWNLOAD_ARTIFACT">3600</UC4RB_DOWNLOAD_TIMEOUTs.00>
-<UC4RB_ENABLE_STAGINGs.00 ReadFromTable="JPPV" altview="0" haslist="0" msginsert="" msgnr="" promptname="UC4RB_ENABLE_STAGING#" promptsetname="PCK.AUTOMIC_BOND.PRV.PROMPTSET.GET_ARTIFACT.DOWNLOAD_ARTIFACT">YES</UC4RB_ENABLE_STAGINGs.00>
-<UC4RB_FORCE_DOWNLOADs.00 ReadFromTable="JPPV" altview="0" haslist="0" msginsert="" msgnr="" promptname="UC4RB_FORCE_DOWNLOAD#" promptsetname="PCK.AUTOMIC_BOND.PRV.PROMPTSET.GET_ARTIFACT.DOWNLOAD_ARTIFACT">YES</UC4RB_FORCE_DOWNLOADs.00>
-<UC4RB_MAX_ARTIFACTSs.00 ReadFromTable="JPPV" altview="0" haslist="0" msginsert="" msgnr="" promptname="UC4RB_MAX_ARTIFACTS#" promptsetname="PCK.AUTOMIC_BOND.PRV.PROMPTSET.GET_ARTIFACT.DOWNLOAD_ARTIFACT">30</UC4RB_MAX_ARTIFACTSs.00>
-<UC4RB_STAGING_AGENTs.00 ReadFromTable="JPPV" altview="1" haslist="0" msginsert="" msgnr="" promptname="UC4RB_STAGING_AGENT#" promptsetname="PCK.AUTOMIC_BOND.PRV.PROMPTSET.GET_ARTIFACT.DOWNLOAD_ARTIFACT">EXT:@target/custom/staging_remote_agent</UC4RB_STAGING_AGENTs.00>
-<UC4RB_STAGING_LOGINs.00 ReadFromTable="JPPV" altview="1" haslist="0" msginsert="" msgnr="" promptname="UC4RB_STAGING_LOGIN#" promptsetname="PCK.AUTOMIC_BOND.PRV.PROMPTSET.GET_ARTIFACT.DOWNLOAD_ARTIFACT">&amp;LOGIN#</UC4RB_STAGING_LOGINs.00>
-<UC4RB_STAGING_REMOTE_BASE_DIRs.00 ReadFromTable="JPPV" altview="1" haslist="0" msginsert="" msgnr="" promptname="UC4RB_STAGING_REMOTE_BASE_DIR#" promptsetname="PCK.AUTOMIC_BOND.PRV.PROMPTSET.GET_ARTIFACT.DOWNLOAD_ARTIFACT">EXT:@target/custom/staging_remote_directory</UC4RB_STAGING_REMOTE_BASE_DIRs.00>
-</PRPTBOX>
-</PROMPTSET>
-</node>
-<node content="1" id="PCK.ITPA_SHARED.PRV.PROMPTSET.OVERWRITE_AGENT" name="PCK.ITPA_SHARED.PRV.PROMPTSET.OVERWRITE_AGENT" parent="PRPTS" type="PROMPTSET">
-<PROMPTSET name="PCK.ITPA_SHARED.PRV.PROMPTSET.OVERWRITE_AGENT">
-<PRPTBOX promptset="PCK.ITPA_SHARED.PRV.PROMPTSET.OVERWRITE_AGENT">
-<AGENTs.00 ReadFromTable="JPPV" altview="1" haslist="0" msginsert="" msgnr="" promptname="AGENT#" promptsetname="PCK.ITPA_SHARED.PRV.PROMPTSET.OVERWRITE_AGENT">&amp;AGENT#</AGENTs.00>
-<LOGINs.00 ReadFromTable="JPPV" altview="1" haslist="0" msginsert="" msgnr="" promptname="LOGIN#" promptsetname="PCK.ITPA_SHARED.PRV.PROMPTSET.OVERWRITE_AGENT">&amp;LOGIN#</LOGINs.00>
-</PRPTBOX>
-</PROMPTSET>
-</node>
-</dyntree>
-</dynvalues>
-<CIT/>
-<calendars CCTypeAll="0" CCTypeExt="0" CCTypeNone="0" CCTypeOne="1" CaleOn="0"/>
-<postconditions>
-<PostCon>
-<conditions id="CONDITIONS"/>
-</PostCon>
-</postconditions>
-</task>
-<task Alias="" BranchType="0" Col="8" Lnr="9" OType="JOBP" Object="PCK.AUTOMIC_JBOSS_V7.PUB.ACTION.DEPLOY_APPLICATION" ParentAlias="" ParentObject="" Row="2" Text2="">
-<checkpoint RollbackFlag="0" RunPerPatch="0" RunPerTarget="0" TcpADays="0" TcpATime="00:00" TcpATimeTZ="" TcpExecute="" TcpOn="0" promptatgen="0" showprompt="0"/>
+<task Alias="" BranchType="0" Col="2" Lnr="8" OType="JOBP" Object="PCK.AUTOMIC_JBOSS_V7.PUB.ACTION.DEPLOY_APPLICATION" ParentAlias="" ParentObject="" Row="4" Text2="">
+<checkpoint RollbackFlag="1" RunPerPatch="0" RunPerTarget="0" TcpADays="0" TcpATime="00:00" TcpATimeTZ="" TcpExecute="" TcpOn="0" promptatgen="0" showprompt="0"/>
 <after ActFlg="1" AtimOn="0" ErlstStDays="0" ErlstStTime="00:00" ErlstStTimeTZ="" HoldFlg="0"/>
 <when ChkWhenExec="0" LtstEnd="0" LtstEndDays="0" LtstEndTime="00:00" LtstSt="0" LtstStDays="0" LtstStTime="00:00" LtstTimeTZ="" WCTypeAND="1" WCTypeOR="0" WElseA="0" WElseH="1" WElseS="0" WElseX="0" WhenExecute="" WtimOn="0"/>
 <preconditions>
@@ -669,7 +467,6 @@
 </preconditions>
 <predecessors>
 <pre BranchType="0" Lnr="1" PreLnr="7" When="ANY_OK" type="container"/>
-<pre BranchType="0" Lnr="2" PreLnr="8" When="ANY_OK" type="container"/>
 </predecessors>
 <runtime MrtCancel="0" MrtDays="0" MrtErt="0" MrtExecute="0" MrtExecuteObj="" MrtFix="0" MrtMethodDate="0" MrtMethodErt="0" MrtMethodFix="0" MrtMethodNone="1" MrtOn="1" MrtTZ="" MrtTime="00:00" SrtErt="0" SrtFix="0" SrtMethodErt="0" SrtMethodFix="0" SrtMethodNone="1"/>
 <result ChkRExec="0" RElseHalt="0" RElseIgn="0" RElseJPAbend="0" RExecFlag="0" RExecute="" RRepMTimes="0" RRepOn="0" RRepWait="0" RWhen=""/>
@@ -689,7 +486,6 @@
 <VALUE state="2">
 <Values>
 <row ERTUsage="0" Mod="0" Name="&amp;AGENT#" Value="EXT:agent"/>
-<row ERTUsage="0" Mod="0" Name="&amp;ARTIFACT_INSTANCE_ID#" Value="EXT:@artifact/system/id"/>
 <row ERTUsage="0" Mod="0" Name="&amp;LOGIN#" Value="EXT:@global/login"/>
 <row ERTUsage="0" Mod="0" Name="&amp;OVERWRITE_AGENT#" Value="EXT:/agent_assignment/agent"/>
 <row ERTUsage="0" Mod="0" Name="&amp;OVERWRITE_LOGIN#" Value="EXT:/agent_assignment/login"/>
@@ -735,8 +531,8 @@
 </PostCon>
 </postconditions>
 </task>
-<task Alias="" BranchType="0" Col="9" Lnr="10" OType="JOBP" Object="PCK.AUTOMIC_JBOSS_V7.PUB.ACTION.START_APPLICATION" ParentAlias="" ParentObject="" Row="2" Text2="">
-<checkpoint RollbackFlag="0" RunPerPatch="0" RunPerTarget="0" TcpADays="0" TcpATime="00:00" TcpATimeTZ="" TcpExecute="" TcpOn="0" promptatgen="0" showprompt="0"/>
+<task Alias="" BranchType="0" Col="3" Lnr="9" OType="JOBP" Object="PCK.AUTOMIC_JBOSS_V7.PUB.ACTION.START_APPLICATION" ParentAlias="" ParentObject="" Row="4" Text2="">
+<checkpoint RollbackFlag="1" RunPerPatch="0" RunPerTarget="0" TcpADays="0" TcpATime="00:00" TcpATimeTZ="" TcpExecute="" TcpOn="0" promptatgen="0" showprompt="0"/>
 <after ActFlg="1" AtimOn="0" ErlstStDays="0" ErlstStTime="00:00" ErlstStTimeTZ="" HoldFlg="0"/>
 <when ChkWhenExec="0" LtstEnd="0" LtstEndDays="0" LtstEndTime="00:00" LtstSt="0" LtstStDays="0" LtstStTime="00:00" LtstTimeTZ="" WCTypeAND="1" WCTypeOR="0" WElseA="0" WElseH="1" WElseS="0" WElseX="0" WhenExecute="" WtimOn="0"/>
 <preconditions>
@@ -745,7 +541,7 @@
 </PreCon>
 </preconditions>
 <predecessors>
-<pre BranchType="0" Lnr="1" PreLnr="9" When="ANY_OK" type="container"/>
+<pre BranchType="0" Lnr="1" PreLnr="8" When="ANY_OK" type="container"/>
 </predecessors>
 <runtime MrtCancel="0" MrtDays="0" MrtErt="0" MrtExecute="0" MrtExecuteObj="" MrtFix="0" MrtMethodDate="0" MrtMethodErt="0" MrtMethodFix="0" MrtMethodNone="1" MrtOn="1" MrtTZ="" MrtTime="00:00" SrtErt="0" SrtFix="0" SrtMethodErt="0" SrtMethodFix="0" SrtMethodNone="1"/>
 <result ChkRExec="0" RElseHalt="0" RElseIgn="0" RElseJPAbend="0" RExecFlag="0" RExecute="" RRepMTimes="0" RRepOn="0" RRepWait="0" RWhen=""/>
@@ -763,7 +559,6 @@
 <VALUE state="2">
 <Values>
 <row ERTUsage="0" Mod="0" Name="&amp;AGENT#" Value="EXT:agent"/>
-<row ERTUsage="0" Mod="0" Name="&amp;ARTIFACT_INSTANCE_ID#" Value="EXT:@artifact/system/id"/>
 <row ERTUsage="0" Mod="0" Name="&amp;LOGIN#" Value="EXT:@global/login"/>
 <row ERTUsage="0" Mod="0" Name="&amp;OVERWRITE_AGENT#" Value="EXT:/agent_assignment/agent"/>
 <row ERTUsage="0" Mod="0" Name="&amp;OVERWRITE_LOGIN#" Value="EXT:/agent_assignment/login"/>
@@ -807,7 +602,7 @@
 </PostCon>
 </postconditions>
 </task>
-<task Alias="" BranchType="0" Col="10" Lnr="11" OType="&lt;END&gt;" Object="END" ParentAlias="" ParentObject="" Row="2" Text2="">
+<task Alias="" BranchType="0" Col="4" Lnr="10" OType="&lt;END&gt;" Object="END" ParentAlias="" ParentObject="" Row="4" Text2="">
 <checkpoint RollbackFlag="0" RunPerPatch="0" RunPerTarget="0" TcpADays="0" TcpATime="00:00" TcpATimeTZ="" TcpExecute="" TcpOn="0" promptatgen="0" showprompt="0"/>
 <after ActFlg="1" AtimOn="0" ErlstStDays="0" ErlstStTime="00:00" ErlstStTimeTZ="" HoldFlg="0"/>
 <when ChkWhenExec="0" LtstEnd="0" LtstEndDays="0" LtstEndTime="00:00" LtstSt="0" LtstStDays="0" LtstStTime="00:00" LtstTimeTZ="" WCTypeAND="1" WCTypeOR="0" WElseA="1" WElseH="0" WElseS="0" WElseX="0" WhenExecute="" WtimOn="0"/>
@@ -817,7 +612,7 @@
 </PreCon>
 </preconditions>
 <predecessors>
-<pre BranchType="0" Lnr="1" PreLnr="10" When="ANY_OK" type="container"/>
+<pre BranchType="0" Lnr="1" PreLnr="9" When="ANY_OK" type="container"/>
 </predecessors>
 <runtime MrtCancel="0" MrtDays="0" MrtErt="0" MrtExecute="0" MrtExecuteObj="" MrtFix="0" MrtMethodDate="0" MrtMethodErt="0" MrtMethodFix="0" MrtMethodNone="1" MrtOn="1" MrtTZ="" MrtTime="00:00" SrtErt="0" SrtFix="0" SrtMethodErt="0" SrtMethodFix="0" SrtMethodNone="1"/>
 <result ChkRExec="0" RElseHalt="0" RElseIgn="0" RElseJPAbend="0" RExecFlag="0" RExecute="" RRepMTimes="0" RRepOn="0" RRepWait="0" RWhen=""/>
@@ -875,7 +670,6 @@
 <VALUE state="1">
 <Values>
 <row ERTUsage="0" Name="&amp;AGENT#" Value="EXT:agent"/>
-<row ERTUsage="0" Name="&amp;ARTIFACT_INSTANCE_ID#" Value="EXT:@artifact/system/id"/>
 <row ERTUsage="0" Name="&amp;LOGIN#" Value="EXT:@global/login"/>
 <row ERTUsage="0" Name="&amp;OVERWRITE_AGENT#" Value="EXT:/agent_assignment/agent"/>
 <row ERTUsage="0" Name="&amp;OVERWRITE_LOGIN#" Value="EXT:/agent_assignment/login"/>
@@ -903,18 +697,7 @@
 <FInclSubDirs>0</FInclSubDirs>
 </ROLLBACK>
 <SCRIPT mode="1" state="1">
-<MSCRI><![CDATA[:INCLUDE PCK.ITPA_SHARED.PRV.INCLUDE.SET_OS_FOR_COMPONENT_FLOW
-
-:print Initial value of ARTIFACT_INSTANCE_ID# &ARTIFACT_INSTANCE_ID#
-
-:SET &CHECK# = STR_STARTS_WITH(&ARTIFACT_INSTANCE_ID#,"EXT:")
-:IF &CHECK# EQ "Y"
-! Artifact Instance ID was not set by a Dynamic Property
-:  pset &ARTIFACT_INSTANCE_ID# = 0
-:endif
-
-:print ARTIFACT_INSTANCE_ID# set to &ARTIFACT_INSTANCE_ID#
-]]></MSCRI>
+<MSCRI><![CDATA[:INCLUDE PCK.ITPA_SHARED.PRV.INCLUDE.SET_OS_FOR_COMPONENT_FLOW]]></MSCRI>
 </SCRIPT>
 <DOCU_Docu state="1" type="text">
 <DOC><![CDATA[Template workflow to install an application on a JBoss server]]></DOC>

@@ -27,6 +27,7 @@
 <DeactDelay>0</DeactDelay>
 <ActAtRun>1</ActAtRun>
 <UC4Priority>0</UC4Priority>
+<PassPriority>0</PassPriority>
 <MaxParallel2>0</MaxParallel2>
 <ReuseHG>1</ReuseHG>
 <MpElse1>1</MpElse1>
@@ -62,7 +63,7 @@
 </postconditions>
 </task>
 <task Alias="" BranchType="0" Col="3" Lnr="2" OType="JOBP" Object="PCK.AUTOMIC_JBOSS_V7.PUB.ACTION.STOP_APPLICATION" ParentAlias="" ParentObject="" Row="1" Text2="">
-<checkpoint RollbackFlag="1" RunPerPatch="0" RunPerTarget="0" TcpADays="0" TcpATime="00:00" TcpATimeTZ="" TcpExecute="" TcpOn="0" promptatgen="0" showprompt="0"/>
+<checkpoint RollbackFlag="0" RunPerPatch="0" RunPerTarget="0" TcpADays="0" TcpATime="00:00" TcpATimeTZ="" TcpExecute="" TcpOn="0" promptatgen="0" showprompt="0"/>
 <after ActFlg="1" AtimOn="0" ErlstStDays="0" ErlstStTime="00:00" ErlstStTimeTZ="" HoldFlg="0"/>
 <when ChkWhenExec="0" LtstEnd="0" LtstEndDays="0" LtstEndTime="00:00" LtstSt="0" LtstStDays="0" LtstStTime="00:00" LtstTimeTZ="" WCTypeAND="1" WCTypeOR="0" WElseA="0" WElseH="1" WElseS="0" WElseX="0" WhenExecute="" WtimOn="0"/>
 <preconditions>
@@ -133,7 +134,7 @@
 </postconditions>
 </task>
 <task Alias="" BranchType="0" Col="4" Lnr="3" OType="JOBP" Object="PCK.AUTOMIC_JBOSS_V7.PUB.ACTION.UNDEPLOY_APPLICATION" ParentAlias="" ParentObject="" Row="1" Text2="">
-<checkpoint RollbackFlag="1" RunPerPatch="0" RunPerTarget="0" TcpADays="0" TcpATime="00:00" TcpATimeTZ="" TcpExecute="" TcpOn="0" promptatgen="0" showprompt="0"/>
+<checkpoint RollbackFlag="0" RunPerPatch="0" RunPerTarget="0" TcpADays="0" TcpATime="00:00" TcpATimeTZ="" TcpExecute="" TcpOn="0" promptatgen="0" showprompt="0"/>
 <after ActFlg="1" AtimOn="0" ErlstStDays="0" ErlstStTime="00:00" ErlstStTimeTZ="" HoldFlg="0"/>
 <when ChkWhenExec="0" LtstEnd="0" LtstEndDays="0" LtstEndTime="00:00" LtstSt="0" LtstStDays="0" LtstStTime="00:00" LtstTimeTZ="" WCTypeAND="1" WCTypeOR="0" WElseA="0" WElseH="1" WElseS="0" WElseX="0" WhenExecute="" WtimOn="0"/>
 <preconditions>
