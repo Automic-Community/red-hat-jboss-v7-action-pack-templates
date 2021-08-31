@@ -17,13 +17,12 @@ Pre-defined deployment workflow for [Red Hat JBoss v7](https://github.com/Automi
 3. Automic Package Bond should be installed.
 4. Automic FileSystem Pack should be installed.
 5. Automic Jboss V7 Pack should be installed.
-7. Maven
+
 ###### Steps to install action pack source code:
 
 1. Clone the code to your machine.
 2. Go to the package directory.
-3. Run the maven command 'mvn clean package' inside the directory containing the pom.xml file.(source/tools/)
-4. Run the command apm upload in the directory which contains package.yml (source/):
+3. Run the command apm upload in the directory which contains package.yml (source/):
    Ex. apm upload -force -u <Name>/<Department> -c <Client-id> -H <Host> -pw <Password> -S AUTOMIC -y -ia -ru
 
 
